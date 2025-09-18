@@ -1,19 +1,6 @@
-# the-garden-friend
+# The Garden Friend
 
-## Project setup
-```
-npm install
-```
+## Connecting You to Your Green Space 🌿
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+![Image](https://github.com/user-attachments/assets/dabb0d41-65f0-48f6-a92b-d73546e67bd8)
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
