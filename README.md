@@ -2,5 +2,5 @@
 
 ## Connecting You to Your Green Space 🌿
 
-![Image](https://github.com/user-attachments/assets/dabb0d41-65f0-48f6-a92b-d73546e67bd8)
+![Image](https://github.com/user-attachments/assets/b60ff55d-bcc4-41b2-ac3a-63aedf768bcc)
 
