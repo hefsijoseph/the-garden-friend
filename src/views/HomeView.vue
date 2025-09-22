@@ -1,6 +1,6 @@
 <template>
-  <div class="home text-primary">
-    <h1>{{ title }}</h1>
+  <div class="home">
+    <h1 class="text-primary">{{ title }}</h1>
   </div>
 </template>
 

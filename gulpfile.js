@@ -13,7 +13,7 @@ function buildStyles() {
 
   // take file from source folder
 
-    return src('scss/**/*.scss')
+    return src('scss/**/*.scss','src/**/*.vue')
 
   // compile file by sass function 
 
@@ -22,7 +22,7 @@ function buildStyles() {
     // final css will contain only classes we used in ./**/*.html
     // purgecss filters unused css in a ./**/*.html then remain with used css in a final css
     
-    .pipe(purgecss( { content: ['./**/*.html']}))
+    .pipe(purgecss( { content: ['./**/*.html', 'src/**/*.vue']}))
      
   // after compilation pass file to a destination folder in a root directory
 
@@ -35,7 +35,7 @@ when we make changes to src files it will
 automatically run buildStyles function */
 
 function watchTask() {
-  watch(['scss/**/*.scss', './**/*.html',  './**/*.js'], buildStyles);
+  watch(['scss/**/*.scss', 'src/**/*.vue' ,'./**/*.html',  './**/*.js'], buildStyles);
 }
 
 /* in order to run this file we have to 
