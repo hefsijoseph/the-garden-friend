@@ -1,0 +1,4 @@
+@use '../sass/index.scss' with (
+  $primary: purple,
+  $secondary: red  // how to override rules from sass folder
+);
