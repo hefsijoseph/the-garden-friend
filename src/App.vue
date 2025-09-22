@@ -1,8 +1,17 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+      <nav class="navbar">
+        <div class="container">
+            <h1 class="site-title">The garden friend</h1>
+            <ul class="display-f">
+                <li class="ml-1 text-hover-secondary">
+                   <router-link to="/">Home</router-link> 
+                </li>
+                <li class="ml-1 text-hover-secondary">
+                    <router-link to="/about">About</router-link>
+                </li>
+            </ul>
+        </div>
+    </nav>
   <router-view/>
 </template>
 
