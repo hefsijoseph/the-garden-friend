@@ -1,0 +1,40 @@
+@use 'sass:color';
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+@use '../utils/functions' as *;
+
+
+@each $key, $value in $colors{
+    .btn-#{$key}{
+        @include btn($value);  // mixin with argument override default value
+        &:hover{
+            background-color: color.adjust($value, $lightness: 5%);
+        }
+    }
+
+    .btn-outlined-#{$key}{
+        @include btn(#fff);  // mixin with argument override default value
+        border: $base-border-thickness solid $value;
+        &:hover{
+            background-color: $value;
+        }
+    }
+
+
+    .btn-complement-#{$key}{
+        @include btn($value);
+        color: light-comp($value);
+        &:hover{
+            color: $value;
+            background-color: light-comp($value);
+        }
+    }
+}
+
+.btn{
+    @include btn; // mixin with no arguments uses default value
+}
+
+// .text-hover-white{
+//     color:#fff;
+//   }

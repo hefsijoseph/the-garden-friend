@@ -1,0 +1,100 @@
+@use 'sass:map';
+// ======== variables ========
+
+// theme colors
+
+// use !default for value that user might override or customize in the future
+// these values user might change them
+
+$primary:#326dee !default;
+$secondary:#1ac888 !default;
+$error:#d32752 !default;
+$info:#f6c31c !default;
+$hefsi: green !default;
+
+
+// map is associted array in programming language, other language
+// it can be like an object
+// associted array have key, value pair
+
+// color palete
+$colors:(
+    "primary":$primary,
+    "secondary":$secondary,
+    "error":$error,
+    "info":$info,
+    "blue":#1919e6,
+    "red":#e61919,
+    "yellow":#e6e619,
+    "green":#19e635,
+    "orange":#ffa600,
+    "purple":#9900ff,
+    "gray":#808080,
+    "black":black,
+    "white":white
+);
+
+.test-btn{
+    background-color: map.get($colors,"purple");
+}
+
+// for spacing
+
+$base-padding:0.75rem !default;
+$base-margin:0.75rem !default;
+
+// for borders
+
+$base-border-thickness:1px !default;
+$base-border-radius:20px !default;
+
+// for box-shadow
+
+$base-box-shadow:1px 3px 5px rgba(0,0,0,0.2) !default;
+
+// for font-sizes
+
+$base-font-size:1rem !default;
+$font-size-sm: $base-font-size * 0.75 !default; 
+$font-size-lg: $base-font-size * 1.5 !default;
+$font-size-xl: $base-font-size * 2 !default;
+$font-size-xxl: $base-font-size * 3 !default; 
+
+
+// for breakpoints
+
+$breakpoints: (
+    "xs": 0,
+    "sm": 480px,
+    "md": 720px,
+    "lg": 960px,
+    "xl": 1200px
+);
+
+
+// for grid system
+
+$grid-columns: 12;
+
+$grid-gaps: (
+    "0": 0,
+    "1": 10px,
+    "2": 20px,
+    "3": 30px
+);
+
+
+// list values are comma separated values
+
+$layout-values: flex-start, flex-end, center, space-between, space-around;
+
+
+// @debug map.get( $colors, "primary" );
+
+
+// // To interact with map using different functions and
+//  the to print on console wit @debug
+
+// @debug map.remove( $colors, "primary" );
+// @debug map.merge($colors,("primary":$primary,"pink":#ffc0cb));
+// @debug map.has-key($colors,"primary");

@@ -1,0 +1,37 @@
+@use 'mixins' as *;
+
+
+// responsive design &
+// media queries
+// on smaller screen will display content 
+// differently than on larger screen
+
+
+
+
+
+.responsive-test{
+    @include xs {
+        color: red;
+    }
+
+    @include sm {
+        color: blue;
+    }
+
+    @include md {
+        color: green;
+    }
+
+    @include lg {
+        color: purple;
+    }
+
+    @include xl {
+        color: orange;
+    }
+
+    @include breakpoint(1400px){
+        color: pink;
+    }
+}

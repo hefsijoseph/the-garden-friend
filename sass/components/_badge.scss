@@ -1,0 +1,14 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+
+.badge {
+    @include badge;
+}
+
+
+@each $key, $value in $colors {
+    .badge-#{$key} {
+        @include badge($value);
+    }
+}

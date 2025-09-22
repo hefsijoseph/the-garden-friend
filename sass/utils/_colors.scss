@@ -1,0 +1,73 @@
+@use 'sass:color';
+
+@use 'variables' as *;
+
+@each $key,$value in $colors{
+    .text-#{$key}{
+        color:$value;
+    }
+
+    .text-hover-#{$key}{
+        &:hover{
+            color: $value;
+        }
+    }
+    
+    .bg-#{$key}{
+        background: $value;
+    }
+
+//   To check if we currently  iterating 
+//   to light or dark then if we are iterating
+//    to those colors black or white we do not run the bellow
+//    codes to generate black variation or white variation
+
+    @if($value != black and $value != white){
+
+       // light variation
+       @for $i from 1 through 9{
+        .text-#{$key}-light-#{$i}{
+            color: color.mix( white, $value, $i * 10 * 1%);
+        }
+
+        .text-hover-#{$key}-light-#{$i}{
+            &:hover{
+             color: color.mix( white, $value, $i * 10 * 1% );
+            }
+         }
+      }
+
+    @for $i from 1 through 9{
+        .bg-#{$key}-light-#{$i}{
+            background-color:color.mix( white, $value, $i * 10 * 1%);
+        }
+    }
+
+
+       // dark variation
+       @for $i from 1 through 9{
+        .text-#{$key}-dark-#{$i}{
+            color:color.mix( black, $value, $i * 10 * 1% );
+        }
+
+        .text-hover-#{$key}-dark-#{$i}{
+            &:hover{
+             color: color.mix( black, $value, $i * 10 * 1% );
+            }
+         }
+    }
+
+    @for $i from 1 through 9{
+        .bg-#{$key}-dark-#{$i}{
+            background-color:color.mix(black, $value, $i * 10 * 1% );
+        }
+    }
+
+ }
+}
+
+@if ( 10 > 5){
+    .test-if{
+        color: black;
+    }
+}
