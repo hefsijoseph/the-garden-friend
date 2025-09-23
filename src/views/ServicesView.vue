@@ -4,8 +4,9 @@
     <ul v-if="gardens.length">
       <li
         class="bg-secondary-light-9"
-        v-for="garden in gardens"
+        v-for="(garden, index) in gardens"
         :key="garden.id"
+        :class=" { borderLeft: theme === 'sale' && index % 2 === 0 }"
       >
         <img :src="garden.imageUrl" alt="image" />
         <h4>{{ garden.name }}</h4>
@@ -83,6 +84,7 @@ export default {
     );
 
     const cardMessage = ref('It is located at,')
+    const theme = ref('sale')
     const gardens = ref([]);
     const locations = ref([]);
 
@@ -98,7 +100,7 @@ export default {
         .catch((err) => console.log(err.message));
     });
 
-    return { title, gardens, titleTwo, p1, titleThree, locations,cardMessage };
+    return { title, gardens, titleTwo, p1, titleThree, locations,cardMessage,theme };
   },
 };
 </script>
@@ -141,5 +143,9 @@ li {
 li.fav {
   background: #ff9ed2;
   color: white;
+}
+
+.borderLeft{
+  border-left: 4px solid  #1ac888;
 }
 </style>
