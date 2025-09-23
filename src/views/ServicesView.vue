@@ -15,47 +15,76 @@
   </div>
   <section id="about" class="bg-secondary-light-9 mt-5 pt-4 pb-4">
     <div class="container">
-      <h2 class="mb-2">{{ titleTwo}}</h2>
+      <h2 class="mb-2">{{ titleTwo }}</h2>
       <p>{{ p1 }}</p>
     </div>
   </section>
 
-     <section id="work" class="mt-5">
-        <div class="container">
-            <h2 class="mb-2">{{ titleThree}}</h2>
-            <div class="row gap-2">
-                <div class="col-12-xs col-6-md col-3-lg" v-if="locations.length">
-                    <div class="card p-0" v-for="location in locations" :key="location.id">
-                        <h3 class="card-title m-1">{{ location.name }}
+  <section id="work" class="mt-5">
+    <div class="container">
+      <h2 class="mb-2">{{ titleThree }}</h2>
+      <div class="row gap-2" v-if="locations.length">
+
+          <div class="col-12-xs col-6-md col-3-lg">
+                    <div class="card p-0">
+                        <h3 class="card-title m-1">{{ locations[0].name }}
                             <span class="badge-orange text-white ml-1">new</span>
                         </h3>
-                        <img :src="location.imageUrl" :alt="location.name">
-                        <p class="m-1"> It is located in {{ location.located }}</p>
+                        <img :src="locations[0].imageUrl" :alt="locations[0].name">
+                        <p class="m-1">{{ cardMessage}} <strong class="text-secondary">{{ locations[0].located  }}</strong></p>
                     </div>
                 </div>
+                 <div class="col-12-xs col-6-md col-3-lg">
+                    <div class="card p-0">
+                        <h3 class="card-title m-1">{{ locations[1].name }}</h3>
+                        <img :src="locations[1].imageUrl" :alt="locations[1].name">
+                        <p class="m-1">{{ cardMessage}}<strong class="text-secondary">{{ locations[1].located }}</strong></p>
+                    </div>
                 </div>
+                 <div class="col-12-xs col-6-md col-3-lg">
+                    <div class="card p-0">
+                        <h3 class="card-title m-1">{{ locations[2].name }}</h3>
+                        <img :src="locations[2].imageUrl" :alt="locations[2].name">
+                        <p class="m-1">{{ cardMessage }} <strong class="text-secondary">{{ locations[2].located }}</strong></p>
+                    </div>
                 </div>
-            <div class="row justify-center mt-2">
-                <button class="btn-secondary text-white font-md">View All</button>
-            </div>
-    </section>
-       <!-- footer -->
- <Footer />
+                   <div class="col-12-xs col-6-md col-3-lg">
+                    <div class="card p-0">
+                        <h3 class="card-title m-1">{{ locations[3].name }}</h3>
+                        <img :src="locations[3].imageUrl" :alt="locations[3].name">
+                        <p class="m-1">{{ cardMessage }}  <strong class="text-secondary">{{ locations[3].located }}</strong></p>
+                    </div>
+                </div>
+         
+      </div>
+    </div>
+    <div class="row justify-center mt-2">
+      <button class="btn-secondary text-white font-md">View All</button>
+    </div>
+  </section>
+  <!-- footer -->
+  <Footer />
 </template>
 
 <script>
 import { onMounted, ref } from "vue";
-import Footer from '../components/Footer.vue'
+import Footer from "../components/Footer.vue";
 
 export default {
   components: { Footer },
   setup() {
     const title = ref("Solutions for Your Garden's Success");
-    const titleTwo = ref("Connecting you to your green space");
-    const titleThree = ref("These are the green spaces we've been talking about.")
-    const p1 = ref('We also help you find beautiful, green locations that are perfect for taking photos.')
+    const titleTwo = ref("Connecting you to your green space 🌿");
+    const titleThree = ref(
+      "These are the green spaces we've been talking about."
+    );
+    const p1 = ref(
+      "We also help you find beautiful, green locations that are perfect for taking photos."
+    );
+
+    const cardMessage = ref('It is located at,')
     const gardens = ref([]);
-    const locations = ref([])
+    const locations = ref([]);
 
     onMounted(() => {
       fetch("http://localhost:3000/gardens")
@@ -63,14 +92,13 @@ export default {
         .then((data) => (gardens.value = data))
         .catch((err) => console.log(err.message));
 
-
-          fetch("http://localhost:3000/locations")
+      fetch("http://localhost:3000/locations")
         .then((res) => res.json())
         .then((data) => (locations.value = data))
         .catch((err) => console.log(err.message));
     });
 
-    return { title, gardens, titleTwo,p1,titleThree,locations };
+    return { title, gardens, titleTwo, p1, titleThree, locations,cardMessage };
   },
 };
 </script>

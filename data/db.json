@@ -24,6 +24,6 @@
         {"name": "Kisemo", "located": "Njiro ", "id": 1,"imageUrl": "/images/kisemo.jpg"},
         {"name": "Duluti", "located": "Usa River", "id": 2,"imageUrl": "/images/duruti.jpg"},
         {"name": "City", "located": "Ngara", "id": 3,"imageUrl": "/images/city.jpg"},
-        {"name":"Themi", "located": "Kwa mrefu", "id": 4,"imageUrl": "/images/themi.jpg"}
+        {"name":"Themi", "located": "Katiti", "id": 4,"imageUrl": "/images/themi.jpg"}
     ]
   }
