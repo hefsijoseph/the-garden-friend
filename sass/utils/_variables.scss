@@ -11,6 +11,7 @@ $secondary:#1ac888 !default;
 $error:#d32752 !default;
 $info:#f6c31c !default;
 $hefsi: green !default;
+$white: white !default;
 
 
 // map is associted array in programming language, other language
@@ -31,7 +32,7 @@ $colors:(
     "purple":#9900ff,
     "gray":#808080,
     "black":black,
-    "white":white
+    "white": $white
 );
 
 .test-btn{

@@ -1,5 +1,5 @@
 <template>
-  <h2>{{ title }}</h2>
+  <h2 class="text-error">{{ title }}</h2>
 </template>
 
 <script>

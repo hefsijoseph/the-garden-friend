@@ -1,0 +1,29 @@
+{
+    "gardens": [
+      {
+        "id": 1,
+        "name": "Botanical Garden",
+        "description": "A beautiful collection of diverse plants.",
+        "imageUrl": "/images/1.jpg" 
+      },
+      {
+        "id": 2,
+        "name": "Zen Garden",
+        "description": "A tranquil space for meditation.",
+        "imageUrl": "/images/2.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Zen Garden",
+        "description": "A tranquil space for meditation.",
+        "imageUrl": "/images/3.jpg"
+      }
+    ],
+
+    "locations": [
+        {"name": "Kisemo", "located": "Njiro ", "id": 1,"imageUrl": "/images/kisemo.jpg"},
+        {"name": "Duluti", "located": "Usa River", "id": 2,"imageUrl": "/images/duruti.jpg"},
+        {"name": "City", "located": "Ngara", "id": 3,"imageUrl": "/images/city.jpg"},
+        {"name":"Themi", "located": "Kwa mrefu", "id": 4,"imageUrl": "/images/themi.jpg"}
+    ]
+  }
