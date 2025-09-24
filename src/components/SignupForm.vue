@@ -24,7 +24,7 @@
     </div>
 
 <div class="submit">
-  <button>Create an account</button>
+  <button>Submit</button>
 </div>
     <!-- <div>
       <input type="checkbox" value="shaun" v-model="names">
