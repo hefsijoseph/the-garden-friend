@@ -1,5 +1,5 @@
 <template>
-  <h2 class="text-error">{{ title }}</h2>
+  <h2 class="mt-2">{{ title }}</h2>
   <SignupForm />
 </template>
 

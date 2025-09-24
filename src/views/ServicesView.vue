@@ -27,7 +27,7 @@
       <div class="row gap-2" v-if="locations.length">
 
           <div class="col-12-xs col-6-md col-3-lg">
-                    <div class="card p-0">
+                    <div class="card p-0"  @click.self="handleClick">
                         <h3 class="card-title m-1">{{ locations[0].name }}
                             <span class="badge-orange text-white ml-1">new</span>
                         </h3>
@@ -64,7 +64,7 @@
     </div>
   </section>
   <!-- footer -->
-  <Footer />
+  <Footer :footerMessage="footerMessage" />
 </template>
 
 <script>
@@ -100,7 +100,20 @@ export default {
         .catch((err) => console.log(err.message));
     });
 
-    return { title, gardens, titleTwo, p1, titleThree, locations,cardMessage,theme };
+// 1. Create a template ref
+const myDiv = ref(null);
+
+// 2. Define the click handler function
+const handleClick = () => {
+  if (myDiv.value) {
+    myDiv.value.classList.add('active');
+  }
+};
+     
+    const footerMessage = ref('Copyright 2025 Designed & Created by Hefsi')
+    return { title, gardens, titleTwo, p1, titleThree, locations,cardMessage,theme,footerMessage
+      ,handleClick
+     };
   },
 };
 </script>
@@ -147,5 +160,9 @@ li.fav {
 
 .borderLeft{
   border-left: 4px solid  #1ac888;
+}
+
+.active{
+  background: red !important;;
 }
 </style>

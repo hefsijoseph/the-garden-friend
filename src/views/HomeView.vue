@@ -41,7 +41,16 @@
         </div>
     </section>
 
-<Footer />
+<Footer>
+  <div>
+    <h4>Hello,</h4>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+  </div>
+  <template  v-slot:links>
+      <router-link :to="{ name: 'contact'}" class="text-secondary pr-2">Signup now</router-link>
+        <router-link :to="{ name: 'services'}" class="text-secondary">More info</router-link>
+  </template>
+  </Footer>
   
 </template>
 

@@ -4,19 +4,19 @@
         "id": 1,
         "name": "Botanical Garden",
         "description": "A beautiful collection of diverse plants.",
-        "imageUrl": "/images/1.jpg" 
+        "imageUrl": "/images/seedlings.png" 
       },
       {
         "id": 2,
         "name": "Zen Garden",
         "description": "A tranquil space for meditation.",
-        "imageUrl": "/images/2.jpg"
+        "imageUrl": "/images/colorful.png"
       },
       {
         "id": 3,
         "name": "Zen Garden",
         "description": "A tranquil space for meditation.",
-        "imageUrl": "/images/3.jpg"
+        "imageUrl": "/images/different-kind.png"
       }
     ],
 
@@ -25,5 +25,10 @@
         {"name": "Duluti", "located": "Usa River", "id": 2,"imageUrl": "/images/duruti.jpg"},
         {"name": "City", "located": "Ngara", "id": 3,"imageUrl": "/images/city.jpg"},
         {"name":"Themi", "located": "Katiti", "id": 4,"imageUrl": "/images/themi.jpg"}
+    ],
+
+    "stories": [
+      {"title": " The Garden Place 🌿", "description": " Step into our garden place and feel the inspiration grow. We're more than just a nursery—we're a community of plant lovers dedicated to sharing our passion. Our vibrant collection of flowers, trees, and garden essentials is hand-picked to help you create your own outdoor sanctuary. Whether you're a seasoned gardener or just starting out, we invite you to explore, ask questions, and connect with fellow enthusiasts. Let us help you cultivate a space that brings you joy and a deeper connection to nature.","id": 1,"image": "/images/different-plants.png"},
+      {"title": "Connect to Green Spaces for Photography ✨", "description": "  Find your next perfect photo location with our simple guide to green spaces. We've scouted beautiful gardens, parks, and natural landscapes so you don't have to. Our service helps you quickly discover stunning backdrops that are perfect for professional shoots or personal projects. No more endless searching—just beautiful locations for beautiful photos.","id": 2,"image": "/images/for-photos.png"}
     ]
   }

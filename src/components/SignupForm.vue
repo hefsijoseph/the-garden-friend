@@ -5,6 +5,7 @@
     <label>Password</label>
     <input type="password" v-model="password" required />
     <p class="error">{{ passwordErr }}</p>
+       <label>Role</label>
     <select v-model="role">
       <option value="designer">Web Designer</option>
       <option value="developer">Web Developer</option>
@@ -14,7 +15,7 @@
     <!-- added alt modifier so , key does not output -->
     <input type="text" v-model="tempSkill" @keyup.alt="addSkill" />
 
-    <div v-for="skill in skills" :key="skill" class="pill">
+    <div v-for="skill in skills" :key="skill" class="pill bg-secondary-light-4 text-black">
       <span @click="deleteSkill(skill)">{{ skill }}</span>
     </div>
     <div class="terms">
@@ -44,10 +45,14 @@
   <p>Password - {{ password }}</p>
   <p>Role - {{ role }}</p>
   <p>Terms accepted {{ terms }}</p>
+  <Footer  :footerMessage="footerMessage"/>
 </template>
 
 <script>
+import Footer from '../components/Footer.vue'
+
 export default {
+  components: { Footer },
   data() {
     return {
       email: "",
@@ -57,7 +62,8 @@ export default {
       skills: [],
       terms: false,
       names: [],
-      passwordErr: ''
+      passwordErr: '',
+      footerMessage: 'Copyright 2025 Designed & Created by Hefsi'
     };
   },
 
@@ -97,22 +103,23 @@ export default {
 
 <style>
 form {
-  max-width: 420px;
+  max-width: 620px;
   margin: 30px auto;
-  background: white;
+  background: #eee;
   text-align: left;
   padding: 40px;
   border-radius: 10px;
 }
 
 label {
-  color: #aaa;
+  /* color: #aaa; */
+    color: inherit;
   display: inline-block;
   margin: 25px 0 15px;
-  font-size: 0.6em;
+  font-size: .75em;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-weight: bold;
+  font-weight: bolder;
 }
 
 input,
@@ -122,7 +129,7 @@ select {
   width: 100%;
   box-sizing: border-box;
   border: none;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 3px solid #ddd;
   color: #555;
 }
 
@@ -148,7 +155,7 @@ input[type="checkbox"] {
 }
 
 .submit button{
-  background: #0b6dff;
+  background: #1ac888;
   border: 0;
   padding: 10px 20px;
   margin-top: 20px;
